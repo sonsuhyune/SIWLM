@@ -7,15 +7,21 @@ Also, for the fine-tuning stage, we followed the hyperparameter range suggested 
 
 
 
+
+
 ### Setup Environment
 
 1. python 3.6
 
    Reference to download and install : https://www.python.org/downloads/release/python-360/
+   
+   
 
 2. install requirements
 
    ```> pip install -r requirements.txt```
+
+
 
 
 
@@ -27,13 +33,13 @@ Also, for the fine-tuning stage, we followed the hyperparameter range suggested 
 
    Please refer to download GLUE dataset: https://gluebenchmark.com/
 
-   
+     
 
 2. **Preprocess data**
 
    ```> sh experiments/glue/prepro.sh```
 
-   
+     
 
 3.  **Set the task weight.**
 
