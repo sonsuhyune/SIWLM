@@ -1,7 +1,7 @@
 # The Sequential and Intensive Weighted Language Modeling for Natural Language Understanding
 
 
-Note that we used three V100 GPUs and the same hyperparameter reported on [MT-DNN](https://arxiv.org/abs/1901.11504) paper for pre-training: a learning rate of 5e-5, a batch size of 32 and an optimizer of Adamax. 
+Note that we used three V100 GPUs and the same hyperparameter reported on [MT-DNN](https://arxiv.org/abs/1901.11504) paper for multi-task learning: a learning rate of 5e-5, a batch size of 32 and an optimizer of Adamax. 
 
 Also, for the fine-tuning stage, we followed the hyperparameter range suggested by [SMART](https://arxiv.org/abs/1911.03437) paper: a learning rate of {1e-5, 2e-5, 3e-5, 5e-5\}, a batch size of {16, 32, 64\} and an optimizer of Adam.
 
