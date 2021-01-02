@@ -37,9 +37,9 @@ Also, for the fine-tuning stage, we followed the hyperparameter range suggested 
 
 3.  **Set the task weight.**
 
-   At *experiments/glue/glue_task_def.yml*, you can set the weight of each task.
+      At *experiments/glue/glue_task_def.yml*, you can set the weight of each task.
 
-   We set the initial task weights as \{1:1:1:1:1:1:1:1, 3:1:1:1:1:1:1:1, 6:1:1:1:1:1:1:1, 9:1:1:1:1:1:1:1, 12:1:1:1: 1:1:1:1, 15:1:1:1:1:1:1:1\}. The first values in the task weights are for a central task.
+      We set the initial task weights as \{1:1:1:1:1:1:1:1, 3:1:1:1:1:1:1:1, 6:1:1:1:1:1:1:1, 9:1:1:1:1:1:1:1, 12:1:1:1: 1:1:1:1, 15:1:1:1:1:1:1:1\}. The first values in the task     weights are for a central task.
 
    
 
