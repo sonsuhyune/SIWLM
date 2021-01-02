@@ -6,7 +6,7 @@ Note that we used three V100 GPUs and the same hyperparameter reported on [MT-DN
 Also, for the fine-tuning stage, we followed the hyperparameter range suggested by [SMART](https://arxiv.org/abs/1911.03437) paper: a learning rate of {1e-5, 2e-5, 3e-5, 5e-5\}, a batch size of {16, 32, 64\} and an optimizer of Adam.
 
 
-
+<br/>
 
 
 ### Setup Environment
@@ -15,13 +15,13 @@ Also, for the fine-tuning stage, we followed the hyperparameter range suggested 
 
    Reference to download and install : https://www.python.org/downloads/release/python-360/
    
-   
+<br/>   
 
 2. install requirements
 
    ```> pip install -r requirements.txt```
 
-
+<br/>
 
 
 
