@@ -43,7 +43,7 @@ def model_config(parser):
     parser.add_argument('--dump_state_on', action='store_true')
     parser.add_argument('--answer_opt', type=int, default=0, help='0,1')
     parser.add_argument('--mtl_opt', type=int, default=0)
-    parser.add_argument('--ratio', type=float, default=0) ############################
+    parser.add_argument('--ratio', type=float, default=0) 
     parser.add_argument('--mix_opt', type=int, default=0)
     parser.add_argument('--max_seq_len', type=int, default=512)
     parser.add_argument('--init_ratio', type=float, default=1)
@@ -83,7 +83,7 @@ def train_config(parser):
     parser.add_argument('--log_per_updates', type=int, default=500)
     parser.add_argument('--save_per_updates', type=int, default=10000)
     parser.add_argument('--save_per_updates_on', action='store_true')
-    parser.add_argument('--epochs', type=int, default=5) ###########################epoch
+    parser.add_argument('--epochs', type=int, default=5) 
     parser.add_argument('--batch_size', type=int, default=8)
     parser.add_argument('--batch_size_eval', type=int, default=8)
     parser.add_argument('--optimizer', default='adamax',
@@ -135,8 +135,8 @@ def train_config(parser):
     parser.add_argument('--adv_noise_var', default=1e-5, type=float)
     parser.add_argument('--adv_epsilon', default=1e-6, type=float)
     
-    # pflp-itw
-    parser.add_argument('--itw_on', type=bool, default=False) ################
+    # siwlm
+    parser.add_argument('--itw_on', type=bool, default=False) 
     return parser
 
 
@@ -180,8 +180,8 @@ def main():
     tasks = {}
     task_def_list = []
     dropout_list = []
-    tasks_id = [] ####
-    tasks_weight = {} ####
+    tasks_id = [] 
+    tasks_weight = {} 
 
     train_datasets = []
     for dataset in args.train_datasets:
@@ -189,10 +189,10 @@ def main():
         if prefix in tasks: 
             continue
         task_id = len(tasks)
-        tasks_id.append(task_id) ####
+        tasks_id.append(task_id) 
         tasks[prefix] = task_id
         task_def = task_defs.get_task_def(prefix)
-        tasks_weight[task_id] = task_def.task_weight ####
+        tasks_weight[task_id] = task_def.task_weight 
         task_def_list.append(task_def)
 
 
@@ -320,8 +320,8 @@ def main():
             task_id = batch_meta['task_id']
             
             weight_alpha = 1
-            if args.itw_on: ####
-                if epoch % 2 == 0: # 짝수 에폭의 경우 pflp
+            if args.itw_on: 
+                if epoch % 2 == 0: 
                     if iteration/20 == len(tasks_id):
                         iteration = 0
                     focus_task_id = int(iteration/20)
@@ -354,7 +354,7 @@ def main():
                 logger.info('Saving mt-dnn model to {}'.format(model_file))
                 
                 model.save(model_file)
-        #print(dev_data_list)
+       
         for idx, dataset in enumerate(args.test_datasets):
             prefix = dataset.split('_')[0]
             task_def = task_defs.get_task_def(prefix)

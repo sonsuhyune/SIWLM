@@ -8,7 +8,7 @@ from mt_dnn.loss import LossCriterion
 
 class TaskDef(dict):
     def __init__(self, label_vocab, n_class, data_type, task_type, metric_meta, split_names, enable_san, dropout_p, loss, kd_loss, adv_loss,
-                task_weight): ####
+                task_weight): 
         """
             :param label_vocab: map string label to numbers.
                 only valid for Classification task or ranking task.
@@ -26,7 +26,7 @@ class TaskDef(dict):
         self.loss = loss
         self.kd_loss = kd_loss
         self.adv_loss = adv_loss
-        self.task_weight = task_weight ####
+        self.task_weight = task_weight 
 
     @classmethod
     def from_dict(cls, dict_rep):
@@ -48,7 +48,7 @@ class TaskDefs:
         loss_map = {}
         kd_loss_map = {}
         adv_loss_map = {}
-        task_weight_map = {} ####
+        task_weight_map = {} 
 
         for task, task_def in self._task_def_dic.items():
             assert "_" not in task, "task name should not contain '_', current task name: %s" % task
@@ -108,7 +108,7 @@ class TaskDefs:
 
         self._task_def_dic = {}
         
-        self._task_weight_map = task_weight_map ####
+        self._task_weight_map = task_weight_map 
 
     def get_task_names(self):
         return list(self._task_type_map.keys())
@@ -128,6 +128,6 @@ class TaskDefs:
                 self._loss_map[task_name],
                 self._kd_loss_map[task_name],
                 self._adv_loss_map[task_name],
-                self._task_weight_map.get(task_name, 1) ####
+                self._task_weight_map.get(task_name, 1) 
             )
         return self._task_def_dic[task_name]

@@ -109,8 +109,7 @@ class MTDNNModel(object):
             if self.config.get('have_lr_scheduler', False): self.config['have_lr_scheduler'] = False
         else:
             raise RuntimeError('Unsupported optimizer: %s' % opt['optimizer'])
-        print("="*50)
-        #print(state_dict['optimizer'])
+        
         if state_dict and 'optimizer' in state_dict:
             #print("Optimizer's state_dict:")
             #state_dict['optimizer']['param_groups'][0]['params']=state_dict['optimizer']['param_groups'][0]['params'][:77]
@@ -119,7 +118,7 @@ class MTDNNModel(object):
             #    print(var_name, "\t", state_dict['optimizer'][var_name])
             #print(self.optimizer.state_dict()) ######
             #state_dict['optimizer'][var_name] =
-            self.optimizer.load_state_dict(state_dict['optimizer']) ###여기서 Error
+            self.optimizer.load_state_dict(state_dict['optimizer']) 
 
         if self.config['fp16']:
             try:
@@ -187,7 +186,7 @@ class MTDNNModel(object):
             y.requires_grad = False
         return y
 
-    def update(self, batch_meta, batch_data, weight_alpha): ####
+    def update(self, batch_meta, batch_data, weight_alpha): 
         self.network.train()
         y = batch_data[batch_meta['label']]
         y = self._to_cuda(y) if self.config['cuda'] else y
@@ -200,7 +199,7 @@ class MTDNNModel(object):
         inputs.append(task_id)
         weight = None
         
-        if self.config['itw_on']: ####
+        if self.config['itw_on']: 
             if self.config['cuda']:
                 weight = torch.FloatTensor([batch_meta['weight']]).cuda(non_blocking=True)*weight_alpha
                 
