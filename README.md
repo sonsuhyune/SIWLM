@@ -83,5 +83,6 @@ MT-DNN repo : [https://github.com/namisan/mt-dnn](https://github.com/namisan/mt-
 <br/>
 
 ### Contact
+For help or issues using SIWLM, please submit a GitHub issue.
 
-Email
+For personal communication related to this package, please contact Suhyune Son(handsuhyun@gmail.com), Seonjeong Hwang(tjswjd0228@gmail.com) and Sohyeun Bae(webby1815@gmail.com)
