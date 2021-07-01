@@ -6,6 +6,8 @@ Note that we used three V100 GPUs and the same hyperparameter reported on [MT-DN
 Also, for the fine-tuning stage, we followed the hyperparameter range suggested by [SMART](https://arxiv.org/abs/1911.03437) paper: a learning rate of {1e-5, 2e-5, 3e-5, 5e-5\}, a batch size of {16, 32, 64\} and an optimizer of Adam.
 
 
+## Citation
+Son, S.; Hwang, S.; Bae, S.; Park, S.J.; Choi, J.-H. A Sequential and Intensive Weighted Language Modeling Scheme for Multi-Task Learning-Based Natural Language Understanding. Appl. Sci. 2021, 11, 3095. https://doi.org/10.3390/app11073095
 
 
 ### Setup Environment
